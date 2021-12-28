@@ -39,42 +39,42 @@ public class length extends AppCompatActivity {
             /* class com.prateek.convertor.length.AnonymousClass1 */
 
             public void onClick(View v) {
-                if (fromspinner.getSelectedItem().toString() == tospinner.getSelectedItem().toString()) {
+                if (fromspinner.getSelectedItem().toString().equals(tospinner.getSelectedItem().toString())) {
                     result.setText(String.valueOf(Double.parseDouble(editText.getText().toString())));
                 }
-                if (fromspinner.getSelectedItem().toString() == "km") {
-                    if (tospinner.getSelectedItem().toString() == "cm") {
+                if (fromspinner.getSelectedItem().toString().equals("km")) {
+                    if (tospinner.getSelectedItem().toString().equals ("cm")){
                         result.setText(String.valueOf(Double.parseDouble(editText.getText().toString()) * 100000.0d));
-                    } else if (tospinner.getSelectedItem().toString() == "m") {
+                    } else if (tospinner.getSelectedItem().toString().equals("m")) {
                         result.setText(String.valueOf(Double.parseDouble(editText.getText().toString()) * 1000.0d));
-                    } else if (tospinner.getSelectedItem().toString() == "inch") {
+                    } else if (tospinner.getSelectedItem().toString().equals("inch")) {
                         result.setText(String.valueOf(39370.1d * Double.parseDouble(editText.getText().toString())));
                     }
                 }
-                if (fromspinner.getSelectedItem().toString() == "cm") {
-                    if (tospinner.getSelectedItem().toString() == "km") {
+                if (fromspinner.getSelectedItem().toString().equals("cm")) {
+                    if (tospinner.getSelectedItem().toString().equals("km")) {
                         result.setText(String.valueOf(Double.parseDouble(editText.getText().toString()) / 100000.0d));
-                    } else if (tospinner.getSelectedItem().toString() == "m") {
+                    } else if (tospinner.getSelectedItem().toString().equals("m")) {
                         result.setText(String.valueOf(Double.parseDouble(editText.getText().toString()) / 100.0d));
-                    } else if (tospinner.getSelectedItem().toString() == "inch") {
+                    } else if (tospinner.getSelectedItem().toString().equals("inch")) {
                         result.setText(String.valueOf(Double.parseDouble(editText.getText().toString()) / 2.54d));
                     }
                 }
-                if (fromspinner.getSelectedItem().toString() == "m") {
-                    if (tospinner.getSelectedItem().toString() == "km") {
+                if (fromspinner.getSelectedItem().toString().equals("m")) {
+                    if (tospinner.getSelectedItem().toString().equals("km")) {
                         result.setText(String.valueOf(Double.parseDouble(editText.getText().toString()) / 1000.0d));
-                    } else if (tospinner.getSelectedItem().toString() == "cm") {
+                    } else if (tospinner.getSelectedItem().toString().equals("cm")) {
                         result.setText(String.valueOf(100.0d * Double.parseDouble(editText.getText().toString())));
-                    } else if (tospinner.getSelectedItem().toString() == "inch") {
+                    } else if (tospinner.getSelectedItem().toString().equals("inch")) {
                         result.setText(String.valueOf(Double.parseDouble(editText.getText().toString()) * 39.37d));
                     }
                 }
-                if (fromspinner.getSelectedItem().toString() == "inch²") {
-                    if (tospinner.getSelectedItem().toString() == "km") {
+                if (fromspinner.getSelectedItem().toString().equals("inch²")) {
+                    if (tospinner.getSelectedItem().toString().equals("km")) {
                         result.setText(String.valueOf(Double.parseDouble(editText.getText().toString()) / 39370.0d));
-                    } else if (tospinner.getSelectedItem().toString() == "m") {
+                    } else if (tospinner.getSelectedItem().toString().equals("m")) {
                         result.setText(String.valueOf(Double.parseDouble(editText.getText().toString()) / 39.37d));
-                    } else if (tospinner.getSelectedItem().toString() == "cm") {
+                    } else if (tospinner.getSelectedItem().toString().equals("cm")) {
                         result.setText(String.valueOf(2.54d * Double.parseDouble(editText.getText().toString())));
                     }
                 }

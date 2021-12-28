@@ -1,5 +1,6 @@
 package com.example.convertor;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -58,17 +59,17 @@ public class currency extends AppCompatActivity {
                 Call<JsonObject> call=retrofitinterface.getExchangeCurrency(fromspinner.getSelectedItem().toString());
                 call.enqueue(new Callback<JsonObject>() {
                     @Override
-                    public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
+                    public void onResponse(@NonNull Call<JsonObject> call, @NonNull Response<JsonObject> response) {
                         JsonObject res = response.body();
                         JsonObject rates = res.getAsJsonObject("rates");
-                        double currency = Double.valueOf(editText.getText().toString());
-                        double multiplier = Double.valueOf(rates.get(tospinner.getSelectedItem().toString()).toString());
+                        double currency = Double.parseDouble(editText.getText().toString());
+                        double multiplier = Double.parseDouble(rates.get(tospinner.getSelectedItem().toString()).toString());
                         double res1 = currency * multiplier;
                         result.setText(String.valueOf(res1));
                     }
 
                     @Override
-                    public void onFailure(Call<JsonObject> call, Throwable t) {
+                    public void onFailure(@NonNull Call<JsonObject> call, @NonNull Throwable t) {
                     }
                 });
             }
