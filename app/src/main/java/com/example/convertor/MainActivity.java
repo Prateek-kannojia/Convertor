@@ -1,8 +1,15 @@
 package com.example.convertor;
 
 import android.content.Intent;
+import android.nfc.Tag;
+import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -11,11 +18,11 @@ public class MainActivity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        findViewById(R.id.length).setOnClickListener(v -> MainActivity.this.lengthinput());
-        findViewById(R.id.Area).setOnClickListener(v -> MainActivity.this.areainput());
-        findViewById(R.id.Volume).setOnClickListener(v -> MainActivity.this.volumeinput());
-        findViewById(R.id.Currency).setOnClickListener(v -> MainActivity.this.currencyinput());
-        findViewById(R.id.Temp).setOnClickListener(v -> MainActivity.this.tempinput());
+        findViewById(R.id.length).setOnClickListener(v -> lengthinput());
+        findViewById(R.id.Area).setOnClickListener(v -> areainput());
+        findViewById(R.id.Volume).setOnClickListener(v -> volumeinput());
+        findViewById(R.id.Currency).setOnClickListener(v ->currencyinput());
+        findViewById(R.id.Temp).setOnClickListener(v -> tempinput());
     }
     private void tempinput() {
         startActivity(new Intent(this, temerature.class));
